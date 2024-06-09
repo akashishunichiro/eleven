@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!-- Banner Section Start-->
+    <div class="banner-section section pt-120">
+        <div class="container">
+            <div class="row">
+                {% for banners in banner %}
+                <div class="col-lg-6 col-12 mb-30">
+
+                    <div class="single-banner">
+                        <img src="{{ banners.photo1.url}}" alt="banner">
+                        <div class="banner-content right">
+                            <h1 style="color:black" class="white"><span style="color: black">Eleven</span>Suvlar</h1>
+                            <a href="https://t.me/+UCqrdH0OGmBlNTUy" class="button">Harid qilish</a>
+                        </div>
+                    </div>
+
+                </div>
+                {% endfor %}
+
+        </div>
+    </div><!-- Banner Section End-->    <!-- Product Section Start-->
+    <div class="product-section section pt-70 pb-60">
+        <div class="container">
+           
+            <!-- Section Title Start-->
+            <div class="row">
+                <div class="section-title text-center col mb-60">
+                    <h1>Bizning mahsulotlar</h1>
+                </div>
+            </div><!-- Section Title End-->
+            
+            <!-- Product Wrapper Start-->
+            <div class="row">
+                {% for eleven in eleven_six %}
+                <!-- Product Start-->
+                <div class="col-lg-4 col-md-6 col-12 mb-60">
+                   
+                    <div class="product">
+
+                        <!-- Image Wrapper -->
+                        <div class="image">
+                            <!-- Image -->
+                            <a href="{% url 'detail' eleven.pk%}" class="img"><img src="{{ eleven.photo.url }}" alt="Product"></a>
+                            <!-- Wishlist -->
+                            <a href="{% url 'detail' eleven.pk%}" class="wishlist"><i class="fa fa-heart-o"></i></a>
+                            <!-- Label -->
+                            <span class="label">New</span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="content">
+                            
+                            <!-- Head Content -->
+                            <div class="head fix">
+                               
+                                <!-- Title & Category -->
+                                <div class="title-category float-left">
+                                    <h5 class="title"><a href="{% url 'detail' eleven.pk%}">{{ eleven.name}}</a></h5>
+                                    <a href="{% url 'shop' %}" class="category">Suv</a>
+                                </div>
+                                <!-- Price -->
+                                <div class="price float-right">
+                                    <span class="new">{{ eleven.price}}- so'm</span>
+                                    <!-- Old Price Mockup If Need -->
+                                    <!-- <span class="old">$46</span> -->
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- Action Button -->
+                            <div class="action-button fix">
+                                <a href="https://t.me/+UCqrdH0OGmBlNTUy">Harid qilish</a>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    
+                </div><!-- Product End-->
+                {% endfor %}
+
+            </div><!-- Product Wrapper End-->
+            
+        </div>
+    </div><!-- Product Section End-->
+{% endblock content %}
+    
+

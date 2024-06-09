@@ -1,0 +1,238 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>eleven</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <!-- CSS
+	============================================ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Modernizer JS -->
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+<body>
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section">
+
+
+    <!-- Header Section Start -->
+    <div class="header-section section">
+
+        <!-- Header Top Start -->
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                        <!-- Header Top Wrapper Start -->
+                        <div class="header-top-wrapper">
+                            <div class="row">
+
+                                <!-- Header Social -->
+                                <div class="header-social col-md-4 col-12">
+                                    <a href="https://www.facebook.com/share/5bVvdbgM3RkNWM36/?mibextid=qi2Omg"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/eleven_poytaxt?igsh=MWZ6ODlwdDF1dTh1ZQ=="><i class="fa fa-instagram"></i></a>
+                                </div>
+
+                                <!-- Header Logo -->
+                                {% for logo in logo %}
+                                <div class="header-logo col-md-4 col-12">
+                                    <a href="{% url 'home' %}" class="logo"><img src="{{ logo.img.url }}" alt="logo"></a>
+                                </div>
+                                {% endfor %}
+
+                                <!-- Account Menu -->
+                                <div class="account-menu col-md-4 col-12">
+                                    <ul>
+                                        <li><a href="#">My Account</a></li>
+                                        <li><a href="wishlist.html">Wishlist</a></li>
+                                        <li><a href="#" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i><span class="num">2</span></a>
+
+                                            <!-- Mini Cart -->
+                                            <div class="mini-cart-brief dropdown-menu text-left">
+                                                <!-- Cart Products -->
+                                                <div class="all-cart-product clearfix">
+                                                    <div class="single-cart clearfix">
+                                                        <div class="cart-image">
+                                                            <a href="product-details.html"><img src="{% static 'img/cart/1.jpg' %}" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-info">
+                                                            <h5><a href="product-details.html">Holiday Candle</a></h5>
+                                                            <p>1 x £9.00</p>
+                                                            <a href="#" class="cart-delete" title="Remove this item"><i class="fa fa-trash-o"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-cart clearfix">
+                                                        <div class="cart-image">
+                                                            <a href="product-details.html"><img src="{% static 'img/cart/2.jpg' %}" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-info">
+                                                            <h5><a href="product-details.html">Christmas Tree</a></h5>
+                                                            <p>1 x £9.00</p>
+                                                            <a href="#" class="cart-delete" title="Remove this item"><i class="fa fa-trash-o"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Cart Total -->
+                                                <div class="cart-totals">
+                                                    <h5>Total <span>£12.00</span></h5>
+                                                </div>
+                                                <!-- Cart Button -->
+                                                <div class="cart-bottom  clearfix">
+                                                    <a href="checkout.html">Check out</a>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div><!-- Header Top Wrapper End -->
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- Header Top End -->
+
+        <!-- Header Bottom Start -->
+        <div class="header-bottom section">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Header Bottom Wrapper Start -->
+                    <div class="header-bottom-wrapper text-center col">
+                        {% for logo in logo %}
+                        <!-- Header Bottom Logo -->
+                        <div class="header-bottom-logo">
+                            <a href="index.html" class="logo"><img src="{{ logo.img.url}}" alt="logo"></a>
+                        </div>
+                        {% endfor %}
+
+                        <!-- Main Menu -->
+                        <nav id="main-menu" class="main-menu">
+                            <ul>
+                                <li class="active"><a href="{% url 'home' %}">home</a></li>
+                                <li><a href="{% url 'shop' %}">shop</a>
+                                <li><a href="{% url 'about' %}">about</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- Header Search -->
+                        <div class="header-search">
+
+                            <!-- Search Toggle -->
+                            <button class="search-toggle"><i class="ion-ios-search-strong"></i></button>
+
+                            <!-- Search Form -->
+                            <div class="header-search-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Search...">
+                                    <button><i class="ion-ios-search-strong"></i></button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <!-- Mobile Menu -->
+                        <div class="mobile-menu section d-md-none"></div>
+
+                    </div><!-- Header Bottom Wrapper End -->
+
+                </div>
+            </div>
+        </div><!-- Header Bottom End -->
+
+    </div><!-- Header Section End -->
+
+
+
+
+
+
+
+
+
+            {% block content %}
+
+            {% endblock content %}
+
+ <div class="footer-section section bg-dark" style="background-image: url(img/bg/footer-bg.png)">
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+
+                    <!-- Footer Top Start -->
+                    <div class="footer-top section pt-80 pb-50">
+                        <div class="row">
+                            {% for logo in logo %}
+                            <!-- Footer Widget -->
+                            <div class="footer-widget col-lg-4 col-md-6 col-12 mb-40">
+
+                                <img class="footer-logo" src="{{ logo.img.url }}" alt="logo">
+                            </div>
+                            {% endfor %}
+
+                            <!-- Footer Widget -->
+
+                            <!-- Footer Widget -->
+                            <div class="footer-widget col-lg-4 col-md-6 col-12 mb-40">
+
+                                <h4 class="widget-title">Contact Us</h4>
+
+                                <ul>
+                                    <li><span>Address:</span>Toshkent shahri Koxunur 54</li>
+                                    <li><span>Phone:</span> +998 99 302 00 11  +998 99 114 00 11/li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div><!-- Footer Top End -->
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div><!-- Footer Section End-->
+
+
+</div><!-- Main Wrapper End -->
+
+
+============================================ -->
+
+<!-- jQuery JS -->
+<script src="{% static 'js/vendor/jquery-1.12.0.min.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'js/popper.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- Plugins JS -->
+<script src="{% static 'js/plugins.js' %}"></script>
+<!-- Ajax Mail JS -->
+<script src="{% static 'js/ajax-mail.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
